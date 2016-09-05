@@ -1,0 +1,213 @@
+/*
+	Espresso Bar Slot Machine CSS Styles
+	Author: Rubeun Tan
+	Date: 8/10/2016
+*/
+
+/* Main Body */
+body {
+	color: white;
+	background-size: 100%;
+}
+
+
+.container {
+	margin: 0 auto;
+	padding-top: 120px;
+	padding-bottom: 50px;
+	font-size: 1.1em;
+	font-weight: 500;
+	font-family: "Lucida Console", Monaco, monospace;
+}
+
+/* Beverage Content */
+
+#beverage-selector {
+	background: #333;
+	height: 100px;
+	border-style: solid;
+	border-color: #222;
+}
+
+#beverage-selector p {
+	text-align: center;
+	color: #666;
+	font-family: Copperplate;
+	padding-top: 10px;
+}
+
+/* Beverage Button */
+
+#beverage-selector button {
+	margin: 5px 20px 5px 190px;
+	width: 300px;
+	color: black;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	outline: none;
+   transition-duration: 0.4s;	
+   -webkit-transition-duration: 0.4s;	
+   -moz-transition-duration: 0.4s;	
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);		
+}
+
+#beverage-selector button:hover {
+	box-shadow: 0 12px 16px 0 rgba(255,0,0,0.24), 0 17px 50px 0 rgba(255,0,0,0.19);
+}
+
+p#dispenser-display {
+	float: right;
+	font-size: 0.8em;
+	width: 180px;
+	height: 40px;
+	background: #19459e;
+	color: #02aef5;
+	line-height: 15px;
+	padding: 5px;
+	font-family: Verdana;
+	border: 2px #222 solid;
+}
+
+/* Spinning Ingredients */
+
+#ingredients-carousel {
+	background: #000;
+	height: 200px;
+	border-style: solid;
+	border-color: #222;
+	padding-left: 110px;
+}
+
+#ingredients-carousel .dispenser-reel {
+	width: 60%;
+	height: 60px;
+	float: left;
+}
+
+#ingredients-carousel .dispenser-reel ul {
+	list-style: none;
+}
+
+div.content {
+	padding: 10px 50px 10px 50px;
+	text-align: center;
+	background: rgba(0,0,0,0.9);
+	font-size: 1.4em;	
+}
+
+/* Beverage Dispenser */
+
+#dispenser-bottom {
+	background: #333;
+	height: 160px;
+	border-style: solid;
+	border-color: #222;	
+	padding-top: 10px;
+}
+
+#dispenser-bottom span {
+	height: 128px;
+}
+
+span#dispenser-door {
+	background: #fff;
+	margin: 0 auto;
+	width: 158px;
+	margin-left: 30px;
+}
+
+span#dispenser-door img {
+	display: none;
+}
+
+
+/* Blink Class */
+
+/*
+.blink {
+	animation-duration: 1s;
+	animation-name: blink;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+	from {
+		opacity: 1;
+	}
+	to {
+	  	opacity: 0;
+	}
+}
+*/
+
+/*
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, start);
+}
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+*/
+
+/* Responsive Styles */
+
+@media screen and (min-width: 980px) /* Desktop */ {
+	body {
+		background: url("slotmachine-header-1400.jpg") #000 top left no-repeat;
+		background-size: 100%;
+	}
+
+	.container {
+		background: url("slotmachine-logo.png") rgba(0,0,0,0.8) 5% 2% no-repeat;
+		width: 800px;
+	}	
+	
+}	
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+	body {
+		background: url("slotmachine-header-1000.jpg") #000 top left no-repeat;
+		color: white;
+		background-size: 100%;
+	}
+	.container {
+		background: url("slotmachine-logo.png") rgba(0,0,0,0.8) 5% 2% no-repeat;
+		width: 700px;
+	}
+	#beverage-selector {
+		height: 150px;
+	}
+	p#dispenser-display {
+		float: inherit;
+		margin: 10px auto;
+	}
+	#beverage-selector button {
+		margin: 5px 20px 5px 160px;	
+	}
+	#ingredients-carousel {
+		padding-left: 95px;
+	}
+	span#dispenser-door img {
+		padding-left: 205px;
+	}
+}
+
+@media screen and (max-width: 650px) /* Mobile */ {
+	body {
+		background: url("slotmachine-header-640.jpg") #000 top left no-repeat;
+		color: white;
+		background-size: 100%;
+	}
+	.container {
+		background: url("slotmachine-logo.png") rgba(0,0,0,0.8) 5% 2% no-repeat;
+		width: 500px;
+	}
+}
+

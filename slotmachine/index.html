@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Rubeun's Espresso Bar Slot Machine</title>
+		<meta name="description" content="Rubeun's Espresso Bar Slot Machine, A Javascript, JQuery, CSS, HTML demo featuring the carousel3D JQuery plugin.">
+		<meta name="keywords" content="JQuery, Javascript, HTML, CSS, Bootstrap, Carousel3D, Rubeun Tan">
+		<meta name="robots" content="index,follow">
+		<meta name="author" content="Rubeun Tan">
+		
+		<!-- CSS Styles -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="carousel3d.css">
+		<link rel="stylesheet" href="slotmachine.css?v=1.0">
+
+		<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+
+	</head>
+
+	<body>
+		<div class="container">
+						
+			<div class="col-md-12">
+			
+				<h3>Welcome!</h3>
+			
+				<p>Please click on the button below to (hopefully) dispense a beverage. Options include Coffee, Tea and Espresso.</p>
+				<p>If all ingredients line up, your beverage will be served, if not, get back to work!</p>
+				<p>Thank you for using the Espresso Bar Slot Machine and May the Odds Be Ever in Your Favour!</p>
+			
+			</div>
+
+			<!-- Button & Display -->
+			<div id="beverage-selector" class="col-md-12">
+				<p>Hot Beverage-O-Matic 3000&trade;</p>
+				<button id="dispense-beverage">Dispense Beverage (maybe)</button>
+				
+				<p id="dispenser-display"><span>Please Click Dispense Beverage</span></p>
+				
+			</div>
+		
+			<!-- Ingredients Carousel -->
+			<div id="ingredients-carousel" class="col-md-12">
+				
+				<div class="dispenser-reel">
+					<ul id="dispenser-reel1">
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Ready</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Coffee Maker</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Teapot</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Espresso Machine</div>
+							</div>
+						</li>
+					</ul>								
+				</div>
+				
+				<div class="dispenser-reel">
+					<ul id="dispenser-reel2">
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Ready</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Coffee Filter</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Tea Strainer</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Espresso Tamper</div>
+							</div>
+						</li>
+					</ul>								
+				</div>
+
+				<div class="dispenser-reel">
+					<ul id="dispenser-reel3">
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Ready</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Coffee Beans</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Loose Tea</div>
+							</div>
+						</li>
+						<li class="page">
+							<div class="content">
+								<div class="step-number">Espresso Beans</div>
+							</div>
+						</li>
+					</ul>								
+				</div>			
+			</div>
+
+			<!-- Dispenser -->
+			<div id="dispenser-bottom" class="col-md-12">
+				<span class="col-md-4"></span>
+				<span id="dispenser-door" class="col-md-4"><img src="coffee-animated.gif" alt="Animated Coffee"/></span>
+				<span class="col-md-4"></span>
+			</div>
+
+		</div>
+
+		<!-- JS Scripts -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+		<script src="jquery-carousel3d-1.0.1.js"></script>
+		<script src="slotmachine.js"></script>		
+	</body>
+</html>
