@@ -4,7 +4,7 @@
 	Date: 9/5/2016
 */
 
-/* Main Body & Container */
+/* !Main Body & Container */
 
 body {
 	color: white;
@@ -21,7 +21,7 @@ body {
 	font-family: "Lucida Console", Monaco, monospace;
 }
 
-/* Beverage Selector & Display */
+/* !Beverage Selector & Display */
 
 #beverage-selector {
 	background: #333;
@@ -68,7 +68,7 @@ p#dispenser-display {
 	border: 2px #222 solid;
 }
 
-/* Spinning Carousel Reels of Ingredients */
+/* !Spinning Carousel Reels of Ingredients */
 
 #ingredients-carousel {
 	background: #000;
@@ -95,7 +95,7 @@ div.content {
 	font-size: 1.4em;	
 }
 
-/* Beverage Dispenser */
+/* !Beverage Dispenser */
 
 #dispenser-bottom {
 	background: #333;
@@ -121,7 +121,7 @@ span#dispenser-door img {
 }
 
 
-/* Responsive Styles */
+/* !Responsive Styles */
 
 @media screen and (min-width: 980px) /* Desktop */ {
 	body {
