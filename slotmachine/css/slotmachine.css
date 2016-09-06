@@ -7,7 +7,7 @@
 /* !Main Body & Container */
 
 body {
-	color: white;
+	color: #992012;
 	background-size: 100%;
 }
 
@@ -93,6 +93,7 @@ div.content {
 	text-align: center;
 	background: rgba(0,0,0,0.9);
 	font-size: 1.4em;	
+	color: #fd2722;
 }
 
 /* !Beverage Dispenser */
@@ -139,7 +140,7 @@ span#dispenser-door img {
 @media screen  and (max-width: 979px) /* Tablet */ {
 	body {
 		background: url("../img/slotmachine-header-1000.jpg") #000 top left no-repeat;
-		color: white;
+		color: #992012;
 		background-size: 100%;
 	}
 	.container {
@@ -167,7 +168,7 @@ span#dispenser-door img {
 @media screen and (max-width: 650px) /* Mobile */ {
 	body {
 		background: url("../img/slotmachine-header-640.jpg") #000 top left no-repeat;
-		color: white;
+		color: #992012;
 		background-size: 100%;
 	}
 	.container {
