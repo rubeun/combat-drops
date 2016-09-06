@@ -59,7 +59,7 @@ p#dispenser-display {
 	float: right;
 	font-size: 0.8em;
 	width: 180px;
-	height: 40px;
+	height: 45px;
 	background: #19459e;
 	color: #02aef5;
 	line-height: 15px;
@@ -93,7 +93,6 @@ div.content {
 	text-align: center;
 	background: rgba(0,0,0,0.9);
 	font-size: 1.4em;	
-	color: #fd2722;
 }
 
 /* !Beverage Dispenser */
@@ -111,7 +110,6 @@ div.content {
 }
 
 span#dispenser-door {
-	background: #fff;
 	margin: 0 auto;
 	width: 158px;
 	margin-left: 30px;
@@ -124,7 +122,7 @@ span#dispenser-door img {
 
 /* !Responsive Styles */
 
-@media screen and (min-width: 980px) /* Desktop */ {
+@media only screen and (min-width: 980px) /* Desktop */ {
 	body {
 		background: url("../img/slotmachine-header-1400.jpg") #000 top left no-repeat;
 		background-size: 100%;
@@ -137,7 +135,7 @@ span#dispenser-door img {
 	
 }	
 
-@media screen  and (max-width: 979px) /* Tablet */ {
+@media only screen  and (max-width: 979px) /* Tablet */ {
 	body {
 		background: url("../img/slotmachine-header-1000.jpg") #000 top left no-repeat;
 		color: #992012;
@@ -155,25 +153,41 @@ span#dispenser-door img {
 		margin: 10px auto;
 	}
 	#beverage-selector button {
-		margin: 5px 20px 5px 160px;	
+		margin: 5px 170px;	
 	}
 	#ingredients-carousel {
 		padding-left: 95px;
 	}
 	span#dispenser-door img {
-		padding-left: 205px;
+		padding-left: 170px;
 	}
 }
 
-@media screen and (max-width: 650px) /* Mobile */ {
+@media only screen and (max-width: 650px) /* Mobile */ {
 	body {
 		background: url("../img/slotmachine-header-640.jpg") #000 top left no-repeat;
-		color: #992012;
 		background-size: 100%;
+		color: #992012;
 	}
 	.container {
 		background: url("../img/slotmachine-logo.png") rgba(0,0,0,0.8) 5% 2% no-repeat;
 		width: 500px;
+	}
+	#beverage-selector {
+		height: 150px;
+	}
+	p#dispenser-display {
+		float: inherit;
+		margin: 10px auto;
+	}
+	#beverage-selector button {
+		margin: 5px 70px;	
+	}
+	#ingredients-carousel {
+		padding-left: 0px;
+	}
+	span#dispenser-door img {
+		padding-left: 90px;
 	}
 }
 
