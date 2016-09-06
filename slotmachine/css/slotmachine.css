@@ -1,10 +1,11 @@
 /*
 	Espresso Bar Slot Machine CSS Styles
 	Author: Rubeun Tan
-	Date: 8/10/2016
+	Date: 9/5/2016
 */
 
-/* Main Body */
+/* Main Body & Container */
+
 body {
 	color: white;
 	background-size: 100%;
@@ -20,7 +21,7 @@ body {
 	font-family: "Lucida Console", Monaco, monospace;
 }
 
-/* Beverage Content */
+/* Beverage Selector & Display */
 
 #beverage-selector {
 	background: #333;
@@ -35,8 +36,6 @@ body {
 	font-family: Copperplate;
 	padding-top: 10px;
 }
-
-/* Beverage Button */
 
 #beverage-selector button {
 	margin: 5px 20px 5px 190px;
@@ -69,7 +68,7 @@ p#dispenser-display {
 	border: 2px #222 solid;
 }
 
-/* Spinning Ingredients */
+/* Spinning Carousel Reels of Ingredients */
 
 #ingredients-carousel {
 	background: #000;
@@ -121,40 +120,6 @@ span#dispenser-door img {
 	display: none;
 }
 
-
-/* Blink Class */
-
-/*
-.blink {
-	animation-duration: 1s;
-	animation-name: blink;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-	animation-timing-function: ease-in-out;
-}
-@keyframes blink {
-	from {
-		opacity: 1;
-	}
-	to {
-	  	opacity: 0;
-	}
-}
-*/
-
-/*
-.blink {
-    animation-duration: 1s;
-    animation-name: blink;
-    animation-iteration-count: infinite;
-    animation-timing-function: steps(2, start);
-}
-@keyframes blink {
-    80% {
-        visibility: hidden;
-    }
-}
-*/
 
 /* Responsive Styles */
 
@@ -211,3 +176,36 @@ span#dispenser-door img {
 	}
 }
 
+/* Blink Class */
+
+/*
+.blink {
+	animation-duration: 1s;
+	animation-name: blink;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+	from {
+		opacity: 1;
+	}
+	to {
+	  	opacity: 0;
+	}
+}
+*/
+
+/*
+.blink {
+    animation-duration: 1s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(2, start);
+}
+@keyframes blink {
+    80% {
+        visibility: hidden;
+    }
+}
+*/

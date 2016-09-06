@@ -1,22 +1,23 @@
 /*
 	Espresso Bar Slot Machine JS
-	Date: 8/13/2016
+	Date: 9/5/2016
 	Author: Rubeun Tan
 	Description: 	
-		A "slot machine" that when a button is clicked, randomly spins and stops 3 "wheels". If each wheel has the correct matching ingredient,
-		the beverage associated with those ingredients is "dispensed".
+		A "slot machine" that when a button is clicked, randomly spins and stops 3 "wheels". If each wheel has the ingredients for a beverage,
+		the beverage associated with those ingredients is "dispensed". Implemented by using 3 instances of Carousel3D plugin that rotate to
+		different ingredients based on random generated numbers from 1 to 3. 
 	Plugins: 
 		Carousel3D (http://www.jqueryscript.net/demo/Simple-jQuery-Carousel-Plugin-With-3D-Rotating-Effects-Carousel3d/)
 */
 
 $(document).ready(function() {
 
-	// Button calls function pullHandle with desired beverage
+	// Button click calls function pullHandle
 	$('#dispense-beverage').on("click", function() { 
 		pullHandle();
 	});
 
-
+	// Carousel Configurations
 	$('#dispenser-reel1').carousel3d({
 		perspective: 500, // Specify carousel's perspective value.
 		duration: 1000, // Time of transition.
@@ -44,7 +45,7 @@ $(document).ready(function() {
 });
 
 
-// Rotate 3 elements of the ingredients randomly and checks if all ingredients of beverage are displayed 
+// Function pullHandle to generate random ingredients & dispense beverage if ingredients match 
 function pullHandle(){
 	var reel1, reel2, reel3;
 	
@@ -53,10 +54,10 @@ function pullHandle(){
 	$('#dispenser-display').html("Ingredients Mismatch No Beverage :(");					
 
 
-	// Scroll Down to Focus on Vending Machine
+	// Scroll Page Down to Focus on Vending Machine
 	//$('html, body').animate({scrollTop: 1600}, 2000);
 	
-	//Random number between 1 and 3. 1: Coffee Maker, 2: Teapot, 3: Espresso Machine		
+	// Generate random number for first reel. 1: Coffee Maker, 2: Teapot, 3: Espresso Machine		
 	reel1 = Math.floor(Math.random() * 3) + 1
 	
 	if (reel1 === 1) {
@@ -71,7 +72,7 @@ function pullHandle(){
 	}	
 
 
-	//Random number between 1 and 3. 1: Coffee Filter, 2: Tea Strainer, 3: Espresso Tamper
+	// Generate random number for second reel. 1: Coffee Filter, 2: Tea Strainer, 3: Espresso Tamper
 	reel2 = Math.floor(Math.random() * 3) + 1
 
 	if (reel2 === 1) {
@@ -85,7 +86,7 @@ function pullHandle(){
 		$('#dispenser-reel2').carousel3d('move', 3);
 	}	
 	
-	//Random number between 1 and 3. 1: Coffee Grounds, 2: Loose Tea, 3: Espresso Beans	
+	// Generate random number for 3rd reel. 1: Coffee Grounds, 2: Loose Tea, 3: Espresso Beans	
 	reel3 = Math.floor(Math.random() * 3) + 1
 
 	if (reel3 === 1) {
