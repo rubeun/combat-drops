@@ -1,79 +1,12 @@
 
 //##############################################################################################
-// Misc Exercises
+// COMBAT DROPS - 2016 - 1 
 //##############################################################################################
 
 
 //##############################################################################################
 // Com1
 //##############################################################################################
-
-
-
-// ########## UNIT TEST - Single Array of Digits ############
-function testSingleArrays() {
-	var tests = [];
-	tests.push([0, [4,3,4,4,4,2] ]); 				// Codility's Example
-	tests.push([1, [] ]);								// Empty Array
-	tests.push([2, [-4,2,-6,3,7,-2,6,-3] ]);		// Random 
-	tests.push([3, [5,5,5,5,5] ]);					// Duplicates
-	tests.push([4, [5] ]);								// Single Element
-	tests.push([5, [1,2,3,4,5,6,7,8] ]);			// All Unique
-	tests.push([6, [-3,-2,-5,-4,-2,-1] ]);			// All Negative
-	tests.push([7, [-24354837543087,74536349872623] ]);	// Extremes
-	
-	while(tests.length > 0) {
-		var arr = tests.pop();
-		solution(arr[1]);
-	}
-
-}
-
-
-// Equi Leader
-// Create Suffix Leader Array then calculate Prefix Leader while comparing with Suffix Leader Array to see if Leaders match at any point
-
-function solution(A) {
-	var i, len = A.length, currentLeader, suffixLeaderArray = {};
-	
-		
-	
-	// Calculate Suffix Leader Array from back to front of array
-	
-	// First Suffix Leader is last number in array because it is the only number.
-	currentLeader = A[len-1];
-//	suffixLeaderArray.push({currentLeader-1: 1});	
-	
-	for (i=len-2; i >= 0; i--) {
-
-		if (currentLeader > A[i]) {
-			suffixLeaderArray[currentLeader-1] = suffixLeaderArray[currentLeader-1] + 1;	
-		} else {
-			suffixLeaderArray[A[i]-1] = suffixLeaderArray[A[i]-1] + 1;	
-			currentLeader = A[i];			
-		}
-	}
-	console.log(suffixLeaderArray);
-	return suffixLeaderArray;
-
-
-
-	// Now calculate the Prefix Leader and compare it with its equivalent Suffix Leader
-	
-	//currentLeader = A[0];
-/*
-	if (currentLeader === suffixLeaderArray[]) {
-	
-	}
-	
-	for (i=0; i< len; i++) {
-			
-	
-	
-	}
-*/
-
-}
 
 
 // Quick Brown Fox Problem - write a function that converts "The Quick Brown Fox..." into "abcdefg...."
@@ -422,37 +355,94 @@ function Thing() {
 //----------------------------------------------------------------------------------------------
 
 
-function isPrime(value) {
-    for(var i = 2; i < value; i++) {
-        if(value % i === 0) {
-            return false;
-        }
-    }
-    return value > 1;
+// Number not divisible by itself or 1
+function isPrime(num) {
+
+	if (num > 1) {
+		// Check all numbers from 2 upwards to num. If divisible, return false
+		for (var i = 2; i < num; i++) {
+			if ((num % i) === 0) {
+				return false;
+			}
+		}
+		return true;
+	} else {
+		return false;
+	}
 }
 
-
-function nthPrime(nth) {
-	primeArr = [2], prime = 3;
+// Find the Nth Prime Number. Assumption: N is positive.
+function nthPrime(n) {
+	var num = 2, primeArray = [], nth = n;
 	
 	if (nth === 1) {
 		return 2;
 	}
-	
-	while(primeArr.length < nth) {
-		if (isPrime(prime)) {
-			primeArr.push(prime);
+
+	// Add prime numbers into primeArray until it has nth numbers in array			
+	while (primeArray.length < nth) {
+		if (isPrime(num)) {
+			primeArray.push(num);
+			num += 1;
+		} else {
+			num += 1;
 		}
-		prime = prime + 2; // All Prime numbers after 2 are Odd.
 	}
-	return primeArr[nth-1];
+	console.log(primeArray);
+	return primeArray[nth-1];
 }
 
 
+//##############################################################################################
+// Com5
+//##############################################################################################
+
+
+//----------------------------------------------------------------------------------------------
+// Write output below (should take you under 5 minutes):
+//----------------------------------------------------------------------------------------------
+
+
+
+/*
+   Implement the `hasBadwords` function in the code below to return a boolean if the
+   message contains a badword in it or not.  A badword is contained in the message
+   if the word appears in the sentence, ignoring adjacent punctuation and case.
+*/
+ 
+var sentences = [
+   "I now took the measure of the bench, and found that it was a foot too short; but that could be mended with a chair.",
+   "But it was a foot too narrow, and the other bench in the room was about four inches higher than the planed one--so there was no yoking them.",
+   "I then placed the first bench lengthwise along the only clear space against the wall, leaving a little interval between, for my back to settle down in.",
+   "But I soon found that there came such a draught of cold air over me from under the sill of the window, that this plan would never do at all, especially as another current from the rickety door met the one from the window, and both together formed a series of small whirlwinds in the immediate vicinity of the spot where I had thought to spend the night.",
+   "The devil fetch that harpooneer, thought I, but stop, couldn't I steal a march on him--bolt his door inside, and jump into his bed, not to be wakened by the most violent knockings? It seemed no bad idea; but upon second thoughts I dismissed it.",
+   "For who could tell but what the next draught, so soon as I popped out of the room, the harpooneer might be standing in the entry, all ready to knock me down!"
+];
+ 
+var badwords = ['window', 'chair', 'knockings'];
+ 
+// Fill in function body here
+var hasBadwords = function (message, index) {
+	if (message.indexOf(index) == -1) {
+		return false;
+	} else {
+		return true;
+	}
+}
+ 
+// Tell us what the output is from running this code:
+console.log(sentences.map(function (sentence, index) {
+   return hasBadwords(sentence) ? index : '';
+}).join(''));
+
+// returns undefined
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ END OF DROPS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 
 //##############################################################################################
-// Exercises
+// Random Exercises
 //##############################################################################################
 
 
@@ -509,8 +499,76 @@ function searchFor(toSearch) {
 //console.log(searchFor('lo '));
 
 
+// Equi Leader
+// Create Suffix Leader Array then calculate Prefix Leader while comparing with Suffix Leader Array to see if Leaders match at any point
 
+function solution(A) {
+	var i, len = A.length, currentLeader, suffixLeaderArray = {};
+	
+		
+	
+	// Calculate Suffix Leader Array from back to front of array
+	
+	// First Suffix Leader is last number in array because it is the only number.
+	currentLeader = A[len-1];
+//	suffixLeaderArray.push({currentLeader-1: 1});	
+	
+	for (i=len-2; i >= 0; i--) {
+
+		if (currentLeader > A[i]) {
+			suffixLeaderArray[currentLeader-1] = suffixLeaderArray[currentLeader-1] + 1;	
+		} else {
+			suffixLeaderArray[A[i]-1] = suffixLeaderArray[A[i]-1] + 1;	
+			currentLeader = A[i];			
+		}
+	}
+	console.log(suffixLeaderArray);
+	return suffixLeaderArray;
+
+
+
+	// Now calculate the Prefix Leader and compare it with its equivalent Suffix Leader
+	
+	//currentLeader = A[0];
+/*
+	if (currentLeader === suffixLeaderArray[]) {
+	
+	}
+	
+	for (i=0; i< len; i++) {
+			
+	
+	
+	}
+*/
+
+}
+
+
+// ########## UNIT TEST - Single Array of Digits ############
+function testSingleArrays() {
+	var tests = [];
+	tests.push([0, [4,3,4,4,4,2] ]); 				// Codility's Example
+	tests.push([1, [] ]);								// Empty Array
+	tests.push([2, [-4,2,-6,3,7,-2,6,-3] ]);		// Random 
+	tests.push([3, [5,5,5,5,5] ]);					// Duplicates
+	tests.push([4, [5] ]);								// Single Element
+	tests.push([5, [1,2,3,4,5,6,7,8] ]);			// All Unique
+	tests.push([6, [-3,-2,-5,-4,-2,-1] ]);			// All Negative
+	tests.push([7, [-24354837543087,74536349872623] ]);	// Extremes
+	
+	while(tests.length > 0) {
+		var arr = tests.pop();
+		solution(arr[1]);
+	}
+
+}
+
+
+
+//##############################################################################################
 // JAVASCRIPT OBJECT EXERCISES - http://www.w3resource.com/javascript-exercises/javascript-object-exercises.php
+//##############################################################################################
 
 // Question 1
 // Write a JavaScript program to list the properties of a JavaScript object
@@ -698,4 +756,48 @@ var unsortedLibrary = [
        libraryID: 3245
    }
 ];
+
+
+//##############################################################################################
+// FizzBuzz Alternatives - Top 5 Interview Questions
+// http://david.elbe.me/developers/hiring/2014/09/17/fizzbuzz-alternatives.html
+//##############################################################################################
+
+// 1 - Anagram
+
+function isAnagram(word1, word2) {
+	var wordArr1 = [], wordArr2 = [];
+	
+	wordArr1 = word1.split('');
+	wordArr2 = word2.split('');
+
+	// Anagrams MUST have the same number of letters
+	if (wordArr1.length === wordArr2.length) {
+		
+		for (var i =0; i < wordArr1.length; i++) {
+			// If no character in first word is found in second word, not Anagram
+			var wordArr2Index = wordArr2.indexOf(wordArr1[i]);
+			if ( wordArr2Index === -1) {
+				return false;
+			} else {
+				wordArr2.splice(wordArr2Index, 1);
+			}
+			
+		}		
+		if (wordArr2.length === 0) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	} else {
+		return false;
+	}			 
+}
+
+
+// 2 - 
+
+
+
 
